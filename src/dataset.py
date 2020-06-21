@@ -8,7 +8,16 @@ DIR=Path(config.TRAINING_FILE)
 print(DIR.files())
 trainDF=pd.read_csv(DIR+"Train.csv")
 testDF=pd.read_csv(DIR+"Test.csv")
-X=trainDF.iloc[:,2:-1]
+
+if config.useTransform:
+	from transforms import add_datepart
+	X=add_datepart(trainDF.iloc[:,1:-1],"DATE","date_")
+	testDF=add_datepart(testDF,"DATE","date_")
+	
+else:
+	X=trainDF.iloc[:,2:-1]
+
+print("X Train columns :",X.columns)
 y=trainDF[config.targetColumn]
 X_train, X_validation, y_train, y_validation =\
 	 		train_test_split(X, y, train_size=0.8, random_state=1234)

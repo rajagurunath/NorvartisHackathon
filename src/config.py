@@ -3,10 +3,11 @@ TRAINING_FILE=r"../notebooks/Dataset/"
 H2oModelFile="../h2o"
 ModelDictPath="../model_dict.pkl"
 submissionFile="../submission.csv"
+
 # compute related configs
 useAutoML=False
 targetColumn="MULTIPLE_OFFENSE"
-
+useTransform=True
 
 
 # Model Hyperparamaters
