@@ -64,6 +64,9 @@ For the purpose of Reusing the scripts the scripts are modularised under the dir
 - imports all the neccesary items and coordinates the model building and prediction
 - after the model is build, based on the command line args ,submission file will be prepared. 
 
+### Just a random EDA plot
+
+![randomplot](categoryPlot.png)
 
 
 
