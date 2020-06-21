@@ -1,0 +1,9 @@
+catboost/*
+h2o/*
+Dataset/
+**/catboost_info/*
+**/learning_rate*
+*.csv
+*/*.csv
+*.pkl
+*.zip
