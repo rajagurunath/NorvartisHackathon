@@ -7,3 +7,4 @@ Dataset/
 */*.csv
 *.pkl
 *.zip
+**/.ipynb_checkpoints/*
