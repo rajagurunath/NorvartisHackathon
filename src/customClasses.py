@@ -1,3 +1,12 @@
+"""
+### customClasses.py
+- To implement voting classifier from all the predictions(from csv) made by the model 
+- sklearn doesn't support to build voting classifier from the csv predictions, so Custom Classifier like `FromFileClassifier` (sklean estimator) and `WrapVotingClassifier` 
+- `FromFileClassifier` reads the relavant model csv and acts as a Dummy classifier which just throws the predictions from the CSV
+- `WrapVotingClassifier` builds the soft voting from the given list of Fileclassifiers
+- HardVoting can be performed using a separated function `hardVoting`
+
+"""
 from sklearn.base import BaseEstimator,ClassifierMixin
 from sklearn.ensemble._voting import _BaseVoting
 from sklearn.utils.validation import _deprecate_positional_args
@@ -160,6 +169,15 @@ class WrapVotingClassifier(ClassifierMixin, _BaseVoting):
 
         else:
             return self._predict(X)
+def hardVoting(x):
+    s=x.sum()
+    ones=s
+    zeros=4-ones
+    if zeros>ones:
+        res=0
+    else:
+        res=1
+    return res
 if __name__=='__main__':
 	clfs=[(clf,FromFileClassifier("models_pred.csv",columnName=clf)) for clf in ["RF","GB","catboost","h2o"]]
 	vclf=WrapVotingClassifier(estimators=clfs,voting='soft')

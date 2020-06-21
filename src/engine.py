@@ -1,3 +1,11 @@
+"""
+### engine.py
+- This File acts as an engine where training the models from different frameworks will be performed, Thanks to the sklearn abstraction which is implemented by all the frameworks.
+- All the models we configured, will run parallely using Jobllib package utilizing the all the cores in the machine
+- parallelism code was inspired (taken) from sklearn core package
+
+"""
+
 from models import ModelDict
 from joblib import delayed,Parallel
 from sklearn.utils import _print_elapsed_time

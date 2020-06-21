@@ -1,3 +1,10 @@
+"""
+### transforms.py
+- contains some transformations needed to enrich (feature Engineering) the dataset
+-  Again inspired (taken) from fastai tabular transforms
+
+"""
+
 import re
 import numpy as np
 import pandas as pd

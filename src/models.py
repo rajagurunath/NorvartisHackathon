@@ -1,3 +1,9 @@
+"""
+### models.py
+- This script prepares a container to hold different model from different framework in memory which is then used by engine to train all the model from the container
+- we can also specify to use AutoML from h2o
+
+"""
 from sklearn.ensemble import RandomForestClassifier,GradientBoostingClassifier
 import catboost
 from catboost import CatBoostClassifier

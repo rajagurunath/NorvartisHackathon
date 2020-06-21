@@ -1,3 +1,11 @@
+"""
+### config.py
+- This file is the config for whole application /model building
+- Any changes in this files will be automatically reflected in the model training, prediction ,tunning etc
+
+
+"""
+
 # common File configs
 TRAINING_FILE=r"../notebooks/Dataset/"
 H2oModelFile="../h2o"

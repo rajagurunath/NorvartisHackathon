@@ -1,3 +1,7 @@
+"""
+- The Entry point for model training
+- imports all the neccesary items and coordinates the model building and prediction
+- after the model is build, based on the command line args ,submission file will be prepared. """
 from dataset import trainDF,testDF,X,y
 import config
 from models import ModelDict,saveModelDict,loadModelDict
